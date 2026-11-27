@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef } from "react";
+import { uiLabel } from "../../locales/ui-label";
 import { Tabs, TabsList, TabsTrigger } from "@openreel/ui";
 
 export function WorkspaceTabs<T extends string>({
@@ -57,7 +58,7 @@ export function WorkspaceTabs<T extends string>({
             id={`${prefix}-tab-${option.value}`}
             aria-controls={`${prefix}-panel`}
           >
-            {option.label}
+            {typeof option.label === "string" ? uiLabel(option.label) : option.label}
           </TabsTrigger>
         ))}
       </TabsList>

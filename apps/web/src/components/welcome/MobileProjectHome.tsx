@@ -31,7 +31,7 @@ function savedAt(timestamp: number) {
   if (elapsed < 3_600_000) return `Edited ${Math.floor(elapsed / 60_000)}m ago`;
   if (elapsed < 86_400_000) return `Edited ${Math.floor(elapsed / 3_600_000)}h ago`;
   if (elapsed < 172_800_000) return "Yesterday";
-  return new Date(timestamp).toLocaleDateString(undefined, { month: "short", day: "numeric" });
+  return new Date(timestamp).toLocaleDateString("vi-VN", { month: "short", day: "numeric" });
 }
 function durationLabel(duration: number) {
   const seconds = Math.max(0, Math.floor(duration));

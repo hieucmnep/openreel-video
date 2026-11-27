@@ -1,4 +1,5 @@
 import type { ActionExecutorLike } from "../../services/lazy-action-executor";
+import { uiLabel } from "../../locales/ui-label";
 import { WorkspaceStockPanel } from "./WorkspaceStockPanel";
 import { RecordingsPanel } from "./RecordingsPanel";
 import { AudioLibraryIcon } from "@/icons/audio-library";
@@ -1357,7 +1358,7 @@ export const AssetsPanel: React.FC = () => {
                   </DropdownMenuContent>
                 </DropdownMenu>
               </div>
-              <div className="workspace-chips">{[["all","All"],["video","Video"],["audio","Audio"],["image","Images"]].map(([value,label]) => <ShadcnButton key={value} variant="ghost" aria-pressed={mediaFilter===value} onClick={() => setMediaFilter(value)}>{label}</ShadcnButton>)}</div>
+              <div className="workspace-chips">{[["all","All"],["video","Video"],["audio","Audio"],["image","Images"]].map(([value,label]) => <ShadcnButton key={value} variant="ghost" aria-pressed={mediaFilter===value} onClick={() => setMediaFilter(value)}>{uiLabel(label)}</ShadcnButton>)}</div>
             </div>
             <ProjectPanelBar data={panelData} selectionCount={mediaSelectionCount} />
             <ProxyIngestPanel />

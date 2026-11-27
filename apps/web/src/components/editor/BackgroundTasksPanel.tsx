@@ -3,6 +3,7 @@ import { Popover, PopoverContent, PopoverTrigger, cn } from "@openreel/ui";
 import { Activity } from "@/icons/lucide-compat";
 import { backgroundTasks, summarizeTasks } from "@openreel/core/tasks/task-registry";
 import { startBackgroundTaskSources } from "../../services/background-task-sources";
+import { uiLabel } from "../../locales/ui-label";
 
 // The list, rows and controls load the first time the popover opens; the status-bar indicator stays tiny.
 const BackgroundTasksList = lazy(() => import("./BackgroundTasksList"));
@@ -21,13 +22,13 @@ export const BackgroundTasksIndicator: React.FC<{ className?: string }> = ({ cla
         <button
           type="button"
           className={cn("relative flex h-full items-center gap-1.5 rounded px-2 text-xs font-medium text-fg-1 transition-colors hover:bg-bg-2 hover:text-fg-1 focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent", className)}
-          aria-label={`Background tasks: ${summary.label}`}
+          aria-label={`Background tasks: ${uiLabel(summary.label)}`}
           data-testid="background-tasks-button"
           data-active={summary.active}
         >
           <Activity size={14} aria-hidden className={cn(busy && "text-accent")} />
           <span className="truncate" data-testid="background-tasks-badge" data-count={summary.active}>
-            {busy || summary.failed > 0 ? summary.label : "Idle"}
+            {busy || summary.failed > 0 ? uiLabel(summary.label) : "Idle"}
           </span>
           {summary.failed > 0 && busy && <span className="h-1.5 w-1.5 rounded-full bg-status-error" aria-hidden />}
           {summary.progress !== null && (

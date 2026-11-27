@@ -1,4 +1,5 @@
 import { TransitionDurationField } from "../inspector/TransitionInspector";
+import { uiLabel } from "../../../locales/ui-label";
 import { Button, Input, Switch, ScrollArea } from "@openreel/ui";
 import { useEditorWorkspaceStore } from "../../../stores/editor-workspace-store";
 import React, { useCallback, useMemo, useState } from "react";
@@ -1290,7 +1291,7 @@ export const EffectsPanel: React.FC = () => {
                     : "border-border bg-bg-2 text-fg-3 hover:border-primary/50 hover:text-fg"
                 }`}
               >
-                {category}
+                {uiLabel(category)}
               </Button>
             );
           })}
@@ -1750,7 +1751,7 @@ export const TransitionsPanel: React.FC = () => {
                     : "border-border bg-bg-2 text-fg-3 hover:border-primary/50 hover:text-fg"
                 }`}
               >
-                {category}
+                {uiLabel(category)}
               </Button>
             );
           })}

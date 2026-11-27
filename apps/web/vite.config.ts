@@ -5,6 +5,7 @@ import { stripFfmpegPlugin } from "./vite-plugins/strip-ffmpeg";
 import { pruneFontsPlugin } from "./vite-plugins/prune-fonts";
 import { desktopPreloadPlugin } from "./vite-plugins/desktop-preload";
 import { ortRuntimePlugin } from "./vite-plugins/ort-runtime";
+import { vietnameseLocalizationPlugin } from "./vite-plugins/vietnamese-localization.mjs";
 
 const isDesktop = process.env.OPENREEL_DESKTOP === "1";
 
@@ -42,7 +43,7 @@ function desktopHtmlPlugin() {
 
 export default defineConfig({
   base: isDesktop ? "./" : "/",
-  plugins: [react(), desktopHtmlPlugin(), stripFfmpegPlugin(isDesktop), pruneFontsPlugin(isDesktop), desktopPreloadPlugin(isDesktop), ortRuntimePlugin()],
+  plugins: [vietnameseLocalizationPlugin(), react(), desktopHtmlPlugin(), stripFfmpegPlugin(isDesktop), pruneFontsPlugin(isDesktop), desktopPreloadPlugin(isDesktop), ortRuntimePlugin()],
   assetsInclude: ["**/*.wasm"],
   resolve: {
     // onnxruntime-web's own switch for "do not bundle the .wasm": every ONNX user fetches the one runtime under ort/ instead.

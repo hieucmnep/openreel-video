@@ -131,7 +131,7 @@ export const useSettingsStore = create<SettingsState>()(
       (set, get) => ({
         autoSave: true,
         autoSaveInterval: 5,
-        language: "en",
+        language: "vi",
         audioOutputDeviceId: "",
         audioOutputDeviceLabel: "",
         defaultAudioChannels: "file" as ChannelPreset,

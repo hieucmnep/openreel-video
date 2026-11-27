@@ -160,11 +160,11 @@ function App() {
 
         const aspectRatio = width / height;
         if (aspectRatio < 1) {
-          projectName = "New Vertical Video";
+          projectName = "Video dọc mới";
         } else if (aspectRatio > 1) {
-          projectName = "New Horizontal Video";
+          projectName = "Video ngang mới";
         } else {
-          projectName = "New Square Video";
+          projectName = "Video vuông mới";
         }
       }
 

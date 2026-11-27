@@ -28,8 +28,8 @@ export function AboutDialog({ open, onOpenChange }: AboutDialogProps) {
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-sm" data-testid="about-dialog">
         <DialogHeader>
-          <DialogTitle>About OpenReel</DialogTitle>
-          <DialogDescription>An open source video editor for the browser and desktop.</DialogDescription>
+          <DialogTitle>Catcut fake của anh Hiếu</DialogTitle>
+          <DialogDescription>Phiên bản cá nhân của anh Hiếu, được phát triển từ mã nguồn OpenReel.</DialogDescription>
         </DialogHeader>
         <dl className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-1.5 text-[12px]">
           <dt className="text-fg-muted">Version</dt>

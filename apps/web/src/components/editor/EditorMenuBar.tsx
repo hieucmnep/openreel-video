@@ -1,4 +1,5 @@
 import { Suspense, lazy, useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { uiLabel } from "../../locales/ui-label";
 import { openEditorProject } from "../../services/project-replacement";
 import { openMediaImport } from "../../services/open-media-import";
 import { toast } from "../../stores/notification-store";
@@ -401,7 +402,7 @@ export function EditorMenuBar({
       { label: "Documentation", action: () => { window.open(DOCS_URL, "_blank", "noopener,noreferrer"); } },
       { label: "Report an issue", action: () => { window.open(ISSUES_URL, "_blank", "noopener,noreferrer"); } },
       null,
-      { label: "About OpenReel", action: () => setAboutOpen(true) },
+      { label: "Giới thiệu Catcut fake của anh Hiếu", action: () => setAboutOpen(true) },
       ...(window.openreel?.platform === "desktop"
         ? [
             null,
@@ -438,7 +439,7 @@ export function EditorMenuBar({
         {Object.entries(menus).map(([label, entries]) => (
           <MenubarMenu key={label}>
             <MenubarTrigger className="workspace-menu-trigger font-normal">
-              {label}
+              {uiLabel(label)}
             </MenubarTrigger>
             <MenubarContent className="min-w-56">
               {entries.map((entry, i) =>
@@ -484,14 +485,14 @@ export function EditorMenuBar({
           {compactPath.length === 0 ? Object.keys(menus).map(label => (
             <DropdownMenuItem key={label} className="min-h-11" onSelect={event => { event.preventDefault(); setCompactPath([label]); }}
               onKeyDown={event => { if (event.key === "ArrowRight") { event.preventDefault(); setCompactPath([label]); } }}>
-              {label}<ChevronRight className="ml-auto" />
+              {uiLabel(label)}<ChevronRight className="ml-auto" />
             </DropdownMenuItem>
           )) : <>
             <DropdownMenuItem className="min-h-11" onSelect={event => { event.preventDefault(); setCompactPath(path => path.slice(0, -1)); }}>
-              <ArrowLeft />Back to {compactPath.length > 1 ? compactPath[0] : "application menu"}
+              <ArrowLeft />Quay lại {compactPath.length > 1 ? uiLabel(compactPath[0]) : "menu ứng dụng"}
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuLabel>{compactPath.at(-1)}{compactPath.length > 1 ? ` · ${compactParent && "children" in compactParent && compactParent.heading ? compactParent.heading : "Entire timeline"}` : ""}</DropdownMenuLabel>
+            <DropdownMenuLabel>{uiLabel(compactPath.at(-1))}{compactPath.length > 1 ? ` · ${compactParent && "children" in compactParent && compactParent.heading ? compactParent.heading : "Toàn bộ dòng thời gian"}` : ""}</DropdownMenuLabel>
             {compactEntries.map((entry, index) => entry ? (
               <DropdownMenuItem key={entry.label} disabled={entry.disabled}
                 className={`min-h-11 ${"children" in entry || !entry.description ? "" : "flex-col items-start"}`}

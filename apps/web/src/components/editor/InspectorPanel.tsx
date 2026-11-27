@@ -1,4 +1,5 @@
 import { formatFrameTimecode } from "../../utils/frame-timecode";
+import { uiLabel } from "../../locales/ui-label";
 import { clipSourceTimecodeRange } from "../../services/source-timecode";
 import { WorkspaceTabs, workspaceTabPanel } from "./WorkspacePrimitives";
 import React, {
@@ -92,7 +93,7 @@ const EmptyState: React.FC = () => (
         ["Undo", "⌘ Z"],
       ].map(([label, key]) => (
         <div key={label}>
-          <span>{label}</span>
+          <span>{uiLabel(label)}</span>
           <kbd>{key}</kbd>
         </div>
       ))}

@@ -96,7 +96,7 @@ describe("preserved welcome project creation", () => {
         expect(mocks.navigate).toHaveBeenCalledWith("editor"),
       );
       expect(useProjectStore.getState().project).toMatchObject({
-        name: `New ${label} Video`,
+        name: `Video ${label} mới`,
         settings: { width, height, frameRate: 30 },
       });
       expect(

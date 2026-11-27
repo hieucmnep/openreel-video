@@ -23,6 +23,7 @@ import {
   TooltipTrigger,
 } from "@openreel/ui";
 import { useUIStore } from "../../stores/ui-store";
+import { uiLabel } from "../../locales/ui-label";
 import {
   useEditorWorkspaceStore,
   type AssetSection,
@@ -63,7 +64,7 @@ export function EditorActionRail() {
         <Button
           variant="ghost"
           size="icon"
-          aria-label={label}
+          aria-label={uiLabel(label)}
           aria-pressed={active}
           className={`workspace-rail-button ${active ? "is-active" : ""}`}
           onClick={onClick}
@@ -71,7 +72,7 @@ export function EditorActionRail() {
           {icon}
         </Button>
       </TooltipTrigger>
-      <TooltipContent side="right">{label}</TooltipContent>
+      <TooltipContent side="right">{uiLabel(label)}</TooltipContent>
     </Tooltip>
   );
   return (

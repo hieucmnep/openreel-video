@@ -108,7 +108,7 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({
     if (diffDays < 7) return `${diffDays} days ago`;
     if (diffDays < 30) return `${Math.floor(diffDays / 7)} weeks ago`;
 
-    return date.toLocaleDateString();
+    return date.toLocaleDateString("vi-VN");
   };
 
   if (isLoading) {

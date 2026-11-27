@@ -302,7 +302,7 @@ export const Toolbar: React.FC = () => {
           state={exportState} disabled={false} compact onOpen={openExportDialog} onCancel={handleCancelExport} onDismissError={resetError} />}
         menu={<EditorMenuBar onExport={openExportDialog} onQuickExport={handleQuickExport} onCompress={() => setIsCompressOpen(true)}/>}
       /> : <><ProjectSwitcher trigger={<ShadcnButton variant="ghost" className="workspace-brand p-0 h-auto" aria-label="Project menu">
-        <img src={`${import.meta.env.BASE_URL}icons/editor-reel.svg`} alt="" />OpenReel
+        <img src={`${import.meta.env.BASE_URL}icons/editor-reel.svg`} alt="" />Catcut fake của anh Hiếu
       </ShadcnButton>} />
       <EditorMenuBar onExport={openExportDialog} onQuickExport={handleQuickExport} onCompress={() => setIsCompressOpen(true)} />
       <div className="workspace-project">

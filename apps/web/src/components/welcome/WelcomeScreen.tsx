@@ -209,7 +209,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ initialTab }) => {
       try {
         const created = await withUserProjectCreation(() =>
           createEditorProject({
-            name: `New ${option.label} Video`,
+            name: `Video ${option.label} mới`,
             settings: {
               width: preset.width,
               height: preset.height,
@@ -374,7 +374,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ initialTab }) => {
                   <OpenReelLogo className="w-full h-full" />
                 </div>
                 <span className="font-semibold text-xl text-text-primary tracking-tight">
-                  Open Reel Video
+                  Catcut fake của anh Hiếu
                 </span>
               </div>
 
